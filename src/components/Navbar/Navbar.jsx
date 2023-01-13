@@ -7,7 +7,13 @@ export default function Navbar() {
       <div>
         <h2>TeeRex Store</h2>
       </div>
-      <BsCart3/>
+      <div>
+        <h3>Products</h3>
+        <button>
+          <BsCart3 fontSize={"20px"} />
+        </button>
+        <span>5</span>
+      </div>
     </div>
   );
 }
