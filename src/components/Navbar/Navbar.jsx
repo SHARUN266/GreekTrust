@@ -7,7 +7,7 @@ export default function Navbar() {
       <div>
         <h2>TeeRex Store</h2>
       </div>
-      
+      <BsCart3/>
     </div>
   );
 }
