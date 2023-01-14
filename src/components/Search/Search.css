@@ -1,4 +1,4 @@
-.search {
+.search>form {
   width: 40%;
   display: flex;
   align-items: center;
@@ -6,13 +6,13 @@
   padding: 2rem;
   margin: auto;
 }
-.search > input {
+.search >form> input {
   width: 90%;
   height: 30px;
   border: none;
   border-bottom: 1px solid;
 }
-.search > button {
+.search >form button {
   border: none;
   background: gray;
   display: flex;
@@ -24,7 +24,7 @@
 }
 /* Tablet */
 @media all and (min-width: 767px) and (max-width: 1023px) {
-  .search {
+  .search>form {
     width: 80%;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
     margin: auto;
   }
 
-  .search > button {
+  .search >form> button {
     border: none;
     background: black;
     gap: 2%;
@@ -50,7 +50,7 @@
 /* Mobile */
 
 @media screen and (max-width: 767px) {
-  .search {
+  .search>form {
     width: 80%;
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@
     gap: 2%;
     margin: auto;
   }
-  .search > button {
+  .search >form> button {
     border: none;
     background: black;
     gap: 2%;

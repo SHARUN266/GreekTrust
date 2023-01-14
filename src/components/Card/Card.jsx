@@ -1,11 +1,12 @@
 import React from 'react'
 import "./Card.css"
-export default function Card() {
+export default function Card(props) {
   return (
     <div className='card'>
-        <img src="https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/polo-tshirts.png" alt="hello" />
+        <img src={props.imageURL} alt={props.name} />
+        <h3>{props.name}</h3>
         <div>
-            <h3>Rs. 300</h3>
+            <h3>Rs. {props.price}</h3>
             <button  >Add to cart</button>
         </div>
     </div>

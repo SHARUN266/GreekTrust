@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import "./Search.css";
 import { BiSearch, BiFilterAlt } from "react-icons/bi";
-export default function Search() {
-   function handleModel(){
-    console.log("Hello")
-    document.getElementsByClassName("filter").style=""
-   }
- 
+export default function Search({ text, setText, handleSearch }) {
   return (
     <div className="search">
-      <input type="text" placeholder="Search for products..." />
-      <button>
-        <BiSearch color="white" fontSize={"30px"} />
-      </button>
-      <button onClick={handleModel} id="filterBtn">
-        <BiFilterAlt color="white" fontSize={"30px"} />
-      </button>
+      <form onSubmit={handleSearch}>
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          type="text"
+          placeholder="Search for products..."
+        />
+
+        <button type="submit">
+          <BiSearch color="white" fontSize={"30px"} />
+        </button>
+        <button id="filterBtn">
+          <BiFilterAlt color="white" fontSize={"30px"} />
+        </button>
+      </form>
     </div>
   );
 }
