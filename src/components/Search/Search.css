@@ -19,3 +19,26 @@
   align-items: center;
   border-radius: 10px;
 }
+/* Tablet */
+@media all and (min-width: 767px) and (max-width: 1023px) {
+  .search {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: auto;
+  }
+}
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+  .search {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: auto;
+  }
+}
