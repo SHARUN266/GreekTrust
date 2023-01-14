@@ -19,6 +19,9 @@
   align-items: center;
   border-radius: 10px;
 }
+#filterBtn {
+  display: none;
+}
 /* Tablet */
 @media all and (min-width: 767px) and (max-width: 1023px) {
   .search {
@@ -29,13 +32,18 @@
     padding: 1rem;
     margin: auto;
   }
+
   .search > button {
     border: none;
     background: black;
-    
+
     display: flex;
     align-items: center;
     border-radius: 10px;
+  }
+  #filterBtn {
+    display: inline;
+    background: #000;
   }
 }
 /* Mobile */
@@ -46,15 +54,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    gap: 2%;
     margin: auto;
   }
   .search > button {
     border: none;
     background: black;
-    
+    gap: 2%;
     display: flex;
     align-items: center;
     border-radius: 10px;
+  }
+  #filterBtn {
+    display: inline;
+    background: #000;
   }
 }
