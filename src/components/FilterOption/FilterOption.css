@@ -1,0 +1,31 @@
+.filter {
+position: fixed;
+  background: #fff;
+  padding: 2px;
+
+  height: auto;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  font-weight: 700;
+}
+.filter div{
+
+    display: grid;
+    gap:15px;
+    grid-template-columns: repeat(2,1fr);
+}
+/* Tablet */
+@media all and (min-width: 767px) and (max-width: 1023px) {
+    .filter{
+        display: none;
+    }
+  }
+  /* Mobile */
+  
+  @media screen and (max-width:767px) {
+      .filter{
+        display: none;
+      }
+  }
