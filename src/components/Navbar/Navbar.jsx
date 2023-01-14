@@ -10,9 +10,9 @@ export default function Navbar() {
       <div>
         <h3>Products</h3>
         <button>
-          <BsCart3 fontSize={"20px"} />
+          <BsCart3 fontSize={"25px"} />
         </button>
-        <span>5</span>
+        <span className="qty">5</span>
       </div>
     </div>
   );
