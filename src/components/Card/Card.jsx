@@ -6,7 +6,7 @@ export default function Card() {
         <img src="https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/polo-tshirts.png" alt="hello" />
         <div>
             <h3>Rs. 300</h3>
-            <button>Add to cart</button>
+            <button  >Add to cart</button>
         </div>
     </div>
   )

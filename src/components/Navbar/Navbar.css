@@ -16,7 +16,7 @@
 .nav > div:last-child>h3{
   text-decoration: underline;
 }
-.nav > div:last-child>button{
+.cart{
   position: relative;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

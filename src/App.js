@@ -1,16 +1,18 @@
-import FilterOption from "./components/FilterOption/FilterOption";
-import Navbar from "./components/Navbar/Navbar";
-import Search from "./components/Search/Search";
-import CardList from "./pages/CardsList/CardList";
+import { Route, Routes } from "react-router-dom";
 
+import Navbar from "./components/Navbar/Navbar";
+
+import Home from "./pages/Home";
+import Products from "./pages/Products/Products";
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <Search/>
-    <FilterOption/>
-    <CardList/>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Products />} />
+      </Routes>
     </>
   );
 }
