@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2%;
     padding: 1rem;
     margin: auto;
   }
@@ -36,7 +37,7 @@
   .search > button {
     border: none;
     background: black;
-
+    gap: 2%;
     display: flex;
     align-items: center;
     border-radius: 10px;
