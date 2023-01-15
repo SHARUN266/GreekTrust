@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Cart(props) {
+export default function Cart({handleDelete,...props}) {
   return (
     <div>
       <img src={props.imageURL} alt={props.name} />
@@ -13,7 +13,7 @@ export default function Cart(props) {
           <option value={i + 1}>Qty:{i + 1}</option>
         ))}
       </select>
-      <button>Delete</button>
+      <button onClick={()=>handleDelete(props.id)}>Delete</button>
     </div>
   );
 }
