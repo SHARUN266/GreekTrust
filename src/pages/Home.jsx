@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import FilterOption from "../components/FilterOption/FilterOption";
 import Search from "../components/Search/Search";
+import { CreateContextApp } from "../context/ContextProvider";
 import CardList from "./CardsList/CardList";
 export default function Home() {
+  const { data, setData } = useContext(CreateContextApp);
   const [text, setText] = useState("");
- 
-  const [data, setData] = useState([]);
+
   useEffect(() => {
     GetTee();
   }, []);
@@ -21,13 +22,12 @@ export default function Home() {
     }
   }
   function handleSearch(e) {
-    e.preventDefault()
+    e.preventDefault();
     let search = data.filter((e) =>
       e.name.toLowerCase().includes(text.toLowerCase())
     );
-    setText("")
+    setText("");
     setData(search);
-  
   }
 
   return (
