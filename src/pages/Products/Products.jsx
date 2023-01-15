@@ -5,8 +5,9 @@ import { CreateContextApp } from "../../context/ContextProvider";
 import "./Products.css";
 export default function Products() {
   const { cart, setCart } = useContext(CreateContextApp);
-  
 
+  
+ 
   function handleDelete(id) {
     let deleteItems = cart.filter((e) => e.id !== id);
 

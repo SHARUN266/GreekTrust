@@ -3,10 +3,11 @@ import { CreateContextApp } from "../../context/ContextProvider";
 import "./Card.css";
 export default function Card(props) {
   const { imageURL, name, price } = props;
-
+  const [flag,setFlag]=useState(false)
   const { cart, setCart } = useContext(CreateContextApp);
   function handleAddToCart(item) {
     setCart([...cart, {...item,qty:1}]);
+    setFlag(true)
   }
 
   return (
@@ -16,7 +17,7 @@ export default function Card(props) {
       <div>
         <h3>Rs. {price}</h3>
         
-        <button onClick={() => handleAddToCart(props)}>Add to cart</button>
+        <button disabled={flag} onClick={() => handleAddToCart(props)}>Add to cart</button>
       </div>
     </div>
   );
