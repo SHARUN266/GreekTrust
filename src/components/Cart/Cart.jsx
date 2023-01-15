@@ -1,22 +1,19 @@
-import React from 'react'
+import React from "react";
 
-export default function Cart() {
+export default function Cart(props) {
   return (
     <div>
-    <img
-      src="https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/round-neck-tshirts.png"
-      alt=""
-    />
-    <div>
-      <label>Title</label>
-      <span>Rs. 250$</span>
+      <img src={props.imageURL} alt={props.name} />
+      <div>
+        <label>{props.name}</label>
+        <span>Rs. {props.price}</span>
+      </div>
+      <select>
+        {new Array(props.quantity).fill(0)?.map((e, i) => (
+          <option value={i + 1}>Qty:{i + 1}</option>
+        ))}
+      </select>
+      <button>Delete</button>
     </div>
-    <select name="" id="">
-      <option value="">Qty:1</option>
-      <option value="">Qty:2</option>
-      <option value="">Qty:3</option>
-    </select>
-    <button>Delete</button>
-  </div>
-  )
+  );
 }

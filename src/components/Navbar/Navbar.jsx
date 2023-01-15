@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { BsCart3 } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { CreateContextApp } from "../../context/ContextProvider";
 export default function Navbar() {
+  const {cart}=useContext(CreateContextApp)
   return (
     <div className="nav">
       <div>
@@ -18,7 +20,7 @@ export default function Navbar() {
           </button>
         </Link>
 
-        <span className="qty">5</span>
+        <span className="qty">{cart.length}</span>
       </div>
     </div>
   );
