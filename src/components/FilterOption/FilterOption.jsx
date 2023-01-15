@@ -1,28 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CreateContextApp } from "../../context/ContextProvider";
+import { handleFilter } from "../utils/FilterOpions";
 import "./FilterOption.css";
 export default function FilterOption() {
   const { data, setData } = useContext(CreateContextApp);
-  function handleFilter(e) {
-    let { name, value } = e.target;
-    if (name == "gender") {
-      let filterData = data.filter((e) => e.gender == value);
-      setData(filterData);
-    } else if (name == "color") {
-      let filterData = data.filter((e) => e.color == value);
-      setData(filterData);
-    } else if (name === "type") {
-      let filterData = data.filter((e) => e.type == value);
-      setData(filterData);
-    } else if (name == "price") {
-      let [min, max] = value.split("-").map(Number);
 
-      let filterData = data.filter((e) => e.price >= min && e.price <= max);
-      filterData.sort((a, b) => a.price - b.price);
-      setData(filterData);
-    }
-  }
-  console.log(data);
   return (
     <div className="filter">
       <p>Colour</p>
@@ -31,7 +13,7 @@ export default function FilterOption() {
           type="checkbox"
           id="checkbox1"
           name="color"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
           value="Red"
         />
         <label htmlFor="checkbox1">Red</label>
@@ -39,7 +21,7 @@ export default function FilterOption() {
           type="checkbox"
           id="checkbox2"
           name="color"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
           value="Blue"
         />
         <label htmlFor="checkbox2">Blue</label>
@@ -47,7 +29,7 @@ export default function FilterOption() {
           type="checkbox"
           id="checkbox3"
           name="color"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
           value="Green"
         />
         <label htmlFor="checkbox3">Green</label>
@@ -59,7 +41,7 @@ export default function FilterOption() {
           id="checkbox1"
           name="gender"
           value="Men"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
         />
         <label htmlFor="checkbox1">Men</label>
         <input
@@ -67,7 +49,7 @@ export default function FilterOption() {
           id="checkbox2"
           name="gender"
           value="Women"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
         />
         <label htmlFor="checkbox2">Women</label>
       </div>
@@ -77,7 +59,7 @@ export default function FilterOption() {
           type="checkbox"
           id="checkbox1"
           name="price"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
           value="0-250"
         />
         <label htmlFor="checkbox1">0-Rs250</label>
@@ -85,7 +67,7 @@ export default function FilterOption() {
           type="checkbox"
           id="checkbox2"
           name="price"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
           value="251-450"
         />
         <label htmlFor="checkbox2">Rs251-450</label>
@@ -93,7 +75,7 @@ export default function FilterOption() {
           type="checkbox"
           id="checkbox3"
           name="price"
-          onChange={(e) => handleFilter(e)}
+          onChange={(e) => handleFilter(e, data, setData)}
           value="450"
         />
         <label htmlFor="checkbox3">Rs450</label>
