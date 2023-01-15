@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Search.css";
-import { BiSearch, BiFilterAlt } from "react-icons/bi";
+
 export default function Search({ text, setText, handleSearch }) {
   return (
     <div className="search">
